@@ -5,7 +5,7 @@ Node::Node() {
 }
 
 Node::Node(std::string str, Node* next) {
-  std::cout << "[Node luotu sisällöllä]" << str << "\n";
+  std::cout << "[Node luotu sisällöllä <" << str << ">]\n";
   content = str;
   this->next = next;
 }
@@ -15,7 +15,7 @@ Node::~Node() {
     delete next;
   }
 
-  std::cout << "[Node tuhottu]\n";
+  std::cout << "[Node " << content << " tuhottu]\n";
 }
 
 std::string Node::getContent() {

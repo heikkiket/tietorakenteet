@@ -1,7 +1,7 @@
 #include "Stack.h"
 
 Stack::Stack() {
-  std::cout << "Pino luotu\n";
+  std::cout << "[Pino luotu]\n";
 }
 
 Stack::~Stack() {
