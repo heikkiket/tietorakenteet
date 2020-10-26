@@ -15,6 +15,7 @@ public:
 
   std::string getContent();
   Node* getNext();
+  void setNext(Node *n);
   virtual ~Node();
 };
 

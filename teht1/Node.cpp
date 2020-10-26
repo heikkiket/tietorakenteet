@@ -15,7 +15,7 @@ Node::~Node() {
     delete next;
   }
 
-  std::cout << "[Node " << content << " tuhottu]\n";
+  std::cout << "[Node <" << content << "> tuhottu]\n";
 }
 
 std::string Node::getContent() {
@@ -24,4 +24,9 @@ std::string Node::getContent() {
 
 Node* Node::getNext() {
   return next;
+}
+
+void Node::setNext(Node* n)
+{
+  next = n;
 }
