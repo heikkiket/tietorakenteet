@@ -2,6 +2,7 @@
 #define QUEUE_H
 
 #include <string>
+
 #include "../teht1/Node.h"
 
 class Queue {
