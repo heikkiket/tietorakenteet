@@ -1,5 +1,4 @@
 #!/bin/bash
 
-cd build
-cmake ../src
-cmake --build .
+cmake -S src -B build
+cmake --build build
