@@ -1,3 +1,3 @@
 #!/bin/bash
 
-build/runTests
+./build.sh && build/runTests

@@ -14,10 +14,14 @@ add_executable(queue teht2/queueMain.cpp
   teht2/Queue.cpp
   teht1/Node.cpp)
 
+add_executable(iteratorStack teht5/iteratorMain.cpp
+  teht5/Stack.cpp)
+
 ## Tests
-add_executable(runTests teht2/tests.cpp
-  teht2/Queue.cpp
-  teht1/Node.cpp)
+add_executable(runTests teht5/tests.cpp
+  teht5/Stack.cpp)
+
 target_link_libraries(runTests gtest gtest_main)
 target_link_libraries(runTests ${GTEST_LIBRARIES} pthread)
-add_test( runUnitTests runTests)
+
+add_test(iteratorStackTests iteratorStackTests)
