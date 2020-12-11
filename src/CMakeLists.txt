@@ -17,6 +17,9 @@ add_executable(queue teht2/queueMain.cpp
 add_executable(iteratorStack teht5/iteratorMain.cpp
   teht5/Stack.cpp)
 
+add_executable(stlListStack teht6/stackMain.cpp
+  teht6/Stack.cpp)
+
 ## Tests
 add_executable(runTests teht5/tests.cpp
   teht5/Stack.cpp)
