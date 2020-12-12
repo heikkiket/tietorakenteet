@@ -20,9 +20,13 @@ add_executable(iteratorStack teht5/iteratorMain.cpp
 add_executable(stlListStack teht6/stackMain.cpp
   teht6/Stack.cpp)
 
+add_executable(bintree teht8/BinaryTree.cpp
+  teht8/Tester.cpp teht8/Node.cpp)
+
 ## Tests
-add_executable(runTests teht5/tests.cpp
-  teht5/Stack.cpp)
+add_executable(runTests teht8/tests.cpp
+  teht8/BinaryTree.cpp
+  teht8/Node.cpp)
 
 target_link_libraries(runTests gtest gtest_main)
 target_link_libraries(runTests ${GTEST_LIBRARIES} pthread)
