@@ -151,3 +151,42 @@ TEST_F(testBinaryTree, remove_leaf_with_two_children)
   ASSERT_FALSE(myTree.search("c"));
   ASSERT_EQ("a,b,d", myTree.PreOrder());
 }
+
+TEST_F(testBinaryTree, initial_height_0)
+{
+  ASSERT_EQ(myTree.height(), -1);
+}
+
+TEST_F(testBinaryTree, root_node_height_1)
+{
+  myTree.add("a");
+  ASSERT_EQ(myTree.height(), 0);
+}
+
+TEST_F(testBinaryTree, left_branch_height)
+{
+  myTree.add("c");
+  myTree.add("b");
+  ASSERT_EQ(myTree.height(), 1);
+}
+
+TEST_F(testBinaryTree, higher_branch_height)
+{
+  myTree.add("b");
+  myTree.add("a");
+  myTree.add("c");
+  myTree.add("d");
+
+  ASSERT_EQ(myTree.height(), 2);
+}
+
+TEST_F(testBinaryTree, show_heights)
+{
+  myTree.add("b");
+  myTree.add("a");
+  myTree.add("c");
+  myTree.add("d");
+
+  bool showHeights = true;
+  ASSERT_EQ(myTree.PreOrder(showHeights), "b[2],a[0],c[1],d[0]");
+}

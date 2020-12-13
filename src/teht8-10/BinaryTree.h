@@ -14,6 +14,8 @@ private:
   void removeValue();
   void replace(BinaryTree *newTree);
   BinaryTree *searchLeftmost();
+  int leftHeight();
+  int rightHeight();
 
 public:
   BinaryTree();
@@ -25,11 +27,13 @@ public:
   void removeChild(Node *child);
 
   std::string PreOrder();
+  std::string PreOrder(bool showHeights);
   void add(std::string value);
   bool isEmpty();
   bool search(std::string value);
   bool remove(std::string value);
   std::string returnLeftmost();
+  int height();
 };
 
 #endif

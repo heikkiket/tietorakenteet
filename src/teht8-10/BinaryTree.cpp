@@ -32,16 +32,27 @@ BinaryTree::~BinaryTree()
 
 std::string BinaryTree::PreOrder()
 {
+  return PreOrder(false);
+}
+
+std::string BinaryTree::PreOrder(bool showHeights) {
   std::string str {""};
 
   if (root)
     {
       str = root->data;
+
+      if (showHeights) {
+        str = str + "[" + std::to_string(height()) + "]";
+      }
+
       if (root->left) // pääseekö vasemmalle?
-        str = str + "," + root->left->PreOrder();
+        str = str + "," + root->left->PreOrder(showHeights);
+
       if (root->right)
-        str = str + "," + root->right->PreOrder();
-    }
+        str = str + "," + root->right->PreOrder(showHeights);
+
+  }
 
   return str;
 }
@@ -167,4 +178,33 @@ void BinaryTree::removeChild(Node *child)
     }
   }
 
+}
+
+int BinaryTree::height()
+{
+  if(isEmpty()) {
+    return -1;
+  } else {
+    if(leftHeight() > rightHeight())
+      return leftHeight();
+    else
+      return rightHeight();
+  }
+
+}
+
+int BinaryTree::leftHeight()
+{
+  if(root->left)
+    return 1 + root->left->height();
+  else
+    return 0;
+}
+
+int BinaryTree::rightHeight()
+{
+  if(root->right)
+    return 1 + root->right->height();
+  else
+    return 0;
 }
