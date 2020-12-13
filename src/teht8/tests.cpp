@@ -81,3 +81,73 @@ TEST_F(testBinaryTree, search_right_child)
 
   ASSERT_FALSE(myTree.search("d"));
 }
+
+TEST_F(testBinaryTree, remove_from_empty_tree)
+{
+  ASSERT_FALSE(myTree.remove("a"));
+}
+
+TEST_F(testBinaryTree, remove_root_node) {
+  myTree.add("a");
+  ASSERT_TRUE(myTree.remove("a"));
+  ASSERT_FALSE(myTree.search("a"));
+}
+
+TEST_F(testBinaryTree, remove_leaf) {
+  myTree.add("b");
+  myTree.add("a");
+  ASSERT_TRUE(myTree.remove("a"));
+  ASSERT_FALSE(myTree.search("a"));
+}
+
+TEST_F(testBinaryTree, remove_leaf_with_one_children) {
+  myTree.add("c");
+  myTree.add("b");
+  myTree.add("a");
+  ASSERT_TRUE(myTree.remove("b"));
+  ASSERT_FALSE(myTree.search("b"));
+  ASSERT_TRUE(myTree.search("a"));
+
+  myTree.add("d");
+  myTree.add("e");
+  ASSERT_TRUE(myTree.remove("d"));
+  ASSERT_FALSE(myTree.search("d"));
+  ASSERT_TRUE(myTree.search("e"));
+}
+
+/*  This test checks that reference to the leaf
+    is removed from parent */
+TEST_F(testBinaryTree, remove_parent_reference)
+{
+  myTree.add("a");
+  myTree.add("c");
+  myTree.add("b");
+  myTree.add("d");
+  ASSERT_EQ("a,c,b,d", myTree.PreOrder());
+
+  myTree.remove("b");
+  ASSERT_FALSE(myTree.search("b"));
+  ASSERT_EQ("a,c,d", myTree.PreOrder());
+}
+
+TEST_F(testBinaryTree, search_leftmost)
+{
+  myTree.add("c");
+  myTree.add("b");
+  myTree.add("a");
+
+  ASSERT_EQ("a", myTree.returnLeftmost());
+}
+
+TEST_F(testBinaryTree, remove_leaf_with_two_children)
+{
+  myTree.add("a");
+  myTree.add("c");
+  myTree.add("b");
+  myTree.add("d");
+  ASSERT_EQ("a,c,b,d", myTree.PreOrder());
+
+  myTree.remove("c");
+  ASSERT_FALSE(myTree.search("c"));
+  ASSERT_EQ("a,b,d", myTree.PreOrder());
+}
