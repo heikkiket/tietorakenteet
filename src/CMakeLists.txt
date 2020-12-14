@@ -23,10 +23,12 @@ add_executable(stlListStack teht6/stackMain.cpp
 add_executable(bintree teht8-10/BinaryTree.cpp
   teht8-10/Tester.cpp teht8-10/Node.cpp)
 
+add_executable(binsearch teht11/main.cpp
+  teht11/SortedArray.cpp)
+
 ## Tests
-add_executable(runTests teht8-10/tests.cpp
-  teht8-10/BinaryTree.cpp
-  teht8-10/Node.cpp)
+add_executable(runTests teht11/tests.cpp
+  teht11/SortedArray.cpp)
 
 target_link_libraries(runTests gtest gtest_main)
 target_link_libraries(runTests ${GTEST_LIBRARIES} pthread)
