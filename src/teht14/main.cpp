@@ -16,9 +16,15 @@ int main() {
     std::cout << tok << std::endl;
   }
 
-  // calc.add("1 2 + 2 + 3 + 4");
-  calc.add("5 2 3 + *");
-  calc.calculate();
+  string exp = "5 2 * 3 + ";
+  calc.add(exp);
+  cout << exp << " Tulos: " << calc.calculate() << endl;;
+
+  exp;
+  exp = "5 2 3 + *";
+  calc.add(exp);
+  cout << exp << " Tulos: " << calc.calculate() << endl;
+
   return 0;
 }
 
