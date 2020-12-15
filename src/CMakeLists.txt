@@ -26,9 +26,13 @@ add_executable(bintree teht8-10/BinaryTree.cpp
 add_executable(binsearch teht11/main.cpp
   teht11/SortedArray.cpp)
 
+add_executable(postfix_calc teht14/main.cpp
+  teht14/Calc.cpp)
+
 ## Tests
-add_executable(runTests teht12/tests.cpp
-  teht12/BinaryHeap.cpp)
+add_executable(runTests teht14/tests.cpp
+  teht14/Calc.cpp)
+
 
 target_link_libraries(runTests gtest gtest_main)
 target_link_libraries(runTests ${GTEST_LIBRARIES} pthread)
