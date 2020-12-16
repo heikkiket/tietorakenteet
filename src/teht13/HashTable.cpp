@@ -35,6 +35,9 @@ int HashTable::hashCode(string str, int times) {
 
 void HashTable::add(string key)
 {
+  if(key == "")
+    throw "empty key not allowed";
+
   if(search(key))
     throw "duplicate key";
 

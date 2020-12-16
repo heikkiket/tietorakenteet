@@ -90,3 +90,11 @@ TEST_F(testHashTable, cant_save_to_full_table)
     ASSERT_STREQ(msg, "table full");
   }
 }
+
+TEST_F(testHashTable, emptyStringNotAllowed)
+{
+  try{ myTbl.add(""); } catch(const char* msg) {
+    ASSERT_STREQ(msg, "empty key not allowed");
+  }
+
+}
