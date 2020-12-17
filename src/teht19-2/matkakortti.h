@@ -10,9 +10,6 @@ class Matkakortti
 
 private:
   int matkustajanumero;
-  std::string etunimi;
-  std::string sukunimi;
-  float saldo;
   bool veloitaLippu(Matkalippu lippu);
 
 public:
@@ -21,6 +18,9 @@ public:
   void vaihdaNimi(std::string etunimi, std::string sukunimi);
   void lataaSaldoa(float saldo);
   void tulostaKortinTiedot();
+  float saldo;
+  std::string etunimi;
+  std::string sukunimi;
   static int matkustajaNumeroIndex;
 
   friend bool operator<(const Matkakortti &kortti1,
