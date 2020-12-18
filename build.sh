@@ -1,5 +1,5 @@
 #!/bin/bash
 
-cmake -S src -B build
+cmake -D CMAKE_C_COMPILER=gcc-10 -D CMAKE_CXX_COMPILER=g++-10 -S src -B build
 cmake --build build
 build/matkakortti

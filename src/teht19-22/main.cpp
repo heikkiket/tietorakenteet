@@ -1,4 +1,5 @@
 #include <iostream>
+#include <ranges>
 #include <list>
 #include <string>
 
@@ -28,14 +29,19 @@ int main()
     kortti.tulostaKortinTiedot();
   }
 
-  std::cout << "\n\\nJärjestetään kortit sukunimen perusteella:\n";
+  std::cout << "\n\nJärjestetään kortit sukunimen perusteella:\n";
   kortit.sort([](const Matkakortti &kortti1, const Matkakortti &kortti2) {
     return kortti1.sukunimi < kortti2.sukunimi;
   });
 
-  for (auto kortti : kortit) {
-    kortti.tulostaKortinTiedot();
-  }
+  for (auto kortti : kortit | std::views::filter(
+                                                 [](const Matkakortti &kortti) {
+                                                   return kortti.etunimi.length() > 4;
+                                                 })
+    )
+    {
+      kortti.tulostaKortinTiedot();
+    }
 
   return 0;
 }
