@@ -2,4 +2,4 @@
 
 cmake -S src -B build
 cmake --build build
-# build/omaNopeustesti
+build/matkakortti

@@ -46,8 +46,8 @@ add_executable(setNopeustesti teht17/set-nopeustesti.cpp
 add_executable(omaNopeustesti teht17/oma-nopeustesti.cpp
   teht8-10/BinaryTree.cpp teht8-10/Node.cpp)
 
-add_executable(matkakortti teht19-20/main.cpp
-  teht19-20/matkakortti.cpp teht19-20/matkalippu.cpp)
+add_executable(matkakortti teht19-22/main.cpp
+  teht19-22/matkakortti.cpp teht19-22/matkalippu.cpp)
 
 ## Tests
 add_executable(runTests teht17/tests.cpp
