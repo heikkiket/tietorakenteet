@@ -29,7 +29,7 @@ int main()
     kortti.tulostaKortinTiedot();
   }
 
-  std::cout << "\n\nJärjestetään kortit sukunimen perusteella:\n";
+  std::cout << "\n\nNäytetään vain henkilöt, joilla nimi on yli 4 merkkiä:\n";
   kortit.sort([](const Matkakortti &kortti1, const Matkakortti &kortti2) {
     return kortti1.sukunimi < kortti2.sukunimi;
   });
