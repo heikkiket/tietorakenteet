@@ -1,6 +1,10 @@
 cmake_minimum_required(VERSION 3.10)
 project(Tietorakenteet)
 
+## Needed for c++17 features
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
 ## GOOGLE test
 enable_testing()
@@ -32,12 +36,15 @@ add_executable(hashtable teht13/main.cpp
 add_executable(postfix_calc teht14/main.cpp
  teht14/Calc.cpp)
 
-add_executable(matkakortti teht19-2/main.cpp
-  teht19-2/matkakortti.cpp teht19-2/matkalippu.cpp)
+add_executable(binarytree-set teht17/Tester.cpp
+  teht17/BinaryTree.cpp)
+
+add_executable(matkakortti teht19-20/main.cpp
+  teht19-20/matkakortti.cpp teht19-20/matkalippu.cpp)
 
 ## Tests
-add_executable(runTests teht13/tests.cpp
- teht13/HashTable.cpp)
+add_executable(runTests teht17/tests.cpp
+ teht17/BinaryTree.cpp)
 
 
 target_link_libraries(runTests gtest gtest_main)
