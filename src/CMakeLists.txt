@@ -39,6 +39,13 @@ add_executable(postfix_calc teht14/main.cpp
 add_executable(binarytree-set teht17/Tester.cpp
   teht17/BinaryTree.cpp)
 
+add_executable(setNopeustesti teht17/set-nopeustesti.cpp
+  teht17/BinaryTree.cpp)
+
+
+add_executable(omaNopeustesti teht17/oma-nopeustesti.cpp
+  teht8-10/BinaryTree.cpp teht8-10/Node.cpp)
+
 add_executable(matkakortti teht19-20/main.cpp
   teht19-20/matkakortti.cpp teht19-20/matkalippu.cpp)
 
